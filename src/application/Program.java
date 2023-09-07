@@ -43,6 +43,16 @@ public class Program {
 
 		sellerdao.insert(newSeller);
 		
-		System.out.println("Inserted!! Novo Id" + newSeller.getId());
+		System.out.println("Inserted!! Novo Id = " + newSeller.getId());
+	
+		System.out.println("\n === TESTE 5: seller UPDATE ===");
+
+		seller = sellerdao.findById(1);
+		
+		seller.setName("Martha Waine");
+		
+		sellerdao.update(seller);
+		
+		System.out.println("UPDATE completo!!");
 	}
 }
