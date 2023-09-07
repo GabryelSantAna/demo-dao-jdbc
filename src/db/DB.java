@@ -51,7 +51,7 @@ public class DB {
 		}
 
 	}
-	
+
 	public static void closeStatement(Statement st) {
 		if (st != null) {
 			try {
@@ -61,6 +61,7 @@ public class DB {
 			}
 		}
 	}
+
 	public static void closeResultSet(ResultSet rs) {
 		if (rs != null) {
 			try {
