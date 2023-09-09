@@ -1,5 +1,6 @@
 package application;
 
+import java.util.List;
 import java.util.Scanner;
 
 import model.dao.DaoFactory;
@@ -19,25 +20,17 @@ public class Program2 {
 		Department dep = departmentDao.findById(3);
 
 		System.out.println(dep);
+		
+		
+		System.out.println("\n === TESTE 2: seller findAll ===");
+
+		List<Department> list = departmentDao.finAll();
+
+		for (Department d : list) {
+			System.out.println(d);
+		}
 		/*
-		System.out.println("\n === TESTE 2: seller findByDepartment ===");
-
-		Department department = new Department(2, null);
-		List<Seller> list = sellerdao.findByDepartment(department);
-
-		for (Seller obj : list) {
-			System.out.println(obj);
-		}
-
-		System.out.println("\n === TESTE 3: seller findAll ===");
-
-		list = sellerdao.finAll();
-
-		for (Seller obj : list) {
-			System.out.println(obj);
-		}
-
-		System.out.println("\n === TESTE 4: seller insert ===");
+		System.out.println("\n === TESTE 3: seller insert ===");
 
 		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, department);
 
@@ -45,7 +38,7 @@ public class Program2 {
 
 		System.out.println("Inserted!! Novo Id = " + newSeller.getId());
 
-		System.out.println("\n === TESTE 5: seller UPDATE ===");
+		System.out.println("\n === TESTE 4: seller UPDATE ===");
 
 		seller = sellerdao.findById(1);
 
@@ -55,7 +48,7 @@ public class Program2 {
 
 		System.out.println("UPDATE completo!!");
 
-		System.out.println("\n === TESTE 6: seller DELETE ===");
+		System.out.println("\n === TESTE 5: seller DELETE ===");
 
 		System.out.println("Enter id for delete test: ");
 
