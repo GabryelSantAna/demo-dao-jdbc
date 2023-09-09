@@ -73,10 +73,10 @@ public class SellerDaoJDBC implements SellerDao {
 			st.setDate(3, new java.sql.Date(obj.getBirthDate().getTime()));
 			st.setDouble(4, obj.getBaseSalary());
 			st.setInt(5, obj.getDepartment().getId());
-			st.setInt(6,obj.getId());
+			st.setInt(6, obj.getId());
 
 			st.executeUpdate();
-				
+
 		} catch (SQLException e) {
 			throw new DbException(e.getMessage());
 		} finally {
@@ -89,13 +89,13 @@ public class SellerDaoJDBC implements SellerDao {
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement("DELETE FROM seller WHERE Id = ?");
-			
+
 			st.setInt(1, id);
 			st.executeUpdate();
-			
+
 		} catch (SQLException e) {
 			throw new DbException(e.getMessage());
-		}finally {
+		} finally {
 			DB.closeStatement(st);
 		}
 
